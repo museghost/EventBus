@@ -21,19 +21,19 @@ public:
 class NoopEventStream : public EventStream
 {
 public:
-	void postpone(std::any event) override
+	void postpone(std::any /*event*/) override
 	{
 		throw std::runtime_error{"Noop"};
 	}
-	size_t process(std::size_t limit) override
+	size_t process(std::size_t /*limit*/) override
 	{
 		throw std::runtime_error{"Noop"};
 	}
-	bool addListener(std::uint32_t listenerID, std::any callback) override
+	bool addListener(std::uint32_t /*listenerID*/, std::any /*callback*/) override
 	{
 		throw std::runtime_error{"Noop"};
 	}
-	bool removeListener(std::uint32_t listenerID) override
+	bool removeListener(std::uint32_t /*listenerID*/) override
 	{
 		throw std::runtime_error{"Noop"};
 	}

@@ -40,14 +40,14 @@ public:
 	PostponeCallback postponeCallback = nullptr; // function pointer
 	CreateStreamCallback createStreamCallback = nullptr; // function pointer
 
-	PostponeHelper(const internal::event_id_t eventId,
-				   std::any&& event,
-				   PostponeCallback postponeCallback,
-				   CreateStreamCallback createStreamCallback)
-		: eventID(eventId)
-		, event(std::forward<std::any>(event))
-		, postponeCallback(postponeCallback)
-		, createStreamCallback(createStreamCallback)
+	PostponeHelper(const internal::event_id_t eventId_,
+				   std::any&& event_,
+				   PostponeCallback postponeCallback_,
+				   CreateStreamCallback createStreamCallback_)
+		: eventID(eventId_)
+		, event(std::forward<std::any>(event_))
+		, postponeCallback(postponeCallback_)
+		, createStreamCallback(createStreamCallback_)
 	{}
 
 	template <typename Event>
